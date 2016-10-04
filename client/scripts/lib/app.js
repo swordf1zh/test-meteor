@@ -9,11 +9,13 @@ import Loader from 'angular-ecmascript/module-loader';
 import { Meteor } from 'meteor/meteor';
 
 // Modules
+import ChatsCtrl from '../controllers/chats.controller';
+import CalendarFilter from '../filters/calendar.filter';
 import RoutesConfig from '../routes';
 
 const App = 'Whatsapp';
 
- 
+
 
 // App
 Angular.module(App, [
@@ -23,6 +25,8 @@ Angular.module(App, [
 
 
 new Loader(App)
+  .load(ChatsCtrl)
+  .load(CalendarFilter)
   .load(RoutesConfig);
 
 
