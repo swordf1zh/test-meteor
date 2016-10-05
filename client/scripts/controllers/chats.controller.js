@@ -10,11 +10,16 @@ export default class ChatsCtrl extends Controller {
         return Chats.find();
       }
     });
-
+  }
+  
+  showNewChatModal() {
+    this.NewChat.showModal();
   }
 
   remove(chat) {
-    this.data.remove(chat);
+    this.callMethod('removeChat', chat._id);
   }
 
 }
+
+ChatsCtrl.$inject = ['NewChat'];
